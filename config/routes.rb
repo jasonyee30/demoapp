@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'status_pages/home'
-
-  get 'status_pages/help'
+  root 'status_pages#home'
+  
+  match 'help', to: 'status_pages#help', via: 'get'
 
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
